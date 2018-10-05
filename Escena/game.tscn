@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/GameManager.gd" type="Script" id=1]
 [ext_resource path="res://Prefabs/Plataforma.tscn" type="PackedScene" id=2]
@@ -12,19 +12,10 @@
 [ext_resource path="res://Prefabs/BackgroundManager.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Sound&FX/AhuJm0IlrN4L.128.wav" type="AudioStream" id=11]
 
-[sub_resource type="Shader" id=1]
-
-code = ""
-
-[sub_resource type="ShaderMaterial" id=2]
-
-render_priority = 0
-shader = SubResource( 1 )
-
 [node name="GameManager" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
-_sections_unfolded = [ "Pause", "Transform", "Z Index" ]
+_sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
 list = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 6 ) ]
 rango1X = 10
 rango2X = 800
@@ -38,12 +29,12 @@ distancia = 300
 position = Vector2( 390, 700 )
 scale = Vector2( 1, 1.01929 )
 z_index = 2
+_sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
 velMov = 5
 tiempoDeCaidaMax = 2
 
 [node name="Camera2D" type="Camera2D" parent="." index="2"]
 
-material = SubResource( 2 )
 position = Vector2( 400, 500 )
 anchor_mode = 1
 rotating = false
