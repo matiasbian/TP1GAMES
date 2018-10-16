@@ -11,8 +11,10 @@ var yDePlataformas = 0
 var scene = load("res://Escena/PanelPerdiste.tscn") 
 var scene_instance = scene.instance()
 var audio
+var audioGameOver
 func _ready():
-	audio = get_node("AudioStreamPlayer2D")
+	
+
 	rango2X = get_viewport().size.x - 50
 	text = get_node("CanvasLayer/Label")
 	personaje = get_node("Personaje")
@@ -32,15 +34,13 @@ func cantidadDePlataformas(cant):
 		Plataformas(100)
 
 func MostrarMenuMeMori():
-		get_tree().paused = true
-		scene_instance.set_name("perdiste")
-		add_child(scene_instance)
+		get_tree().change_scene("res://Escena/PanelPerdiste.tscn")
 		
 
 func Puntaje():
 	if personaje.tiempoDeCaida == 0:
-		puntaje = str(-(int( personaje.position.y))/50)
-		text.text = puntaje
+		Puntaje.puntaje = personaje.position.y/50
+		text.text = str(-(int(Puntaje.puntaje)))
 
 func ponerPrimeraPlataforma(): #  en el ready poner siempre esto
 	var scene_instance = list[1]

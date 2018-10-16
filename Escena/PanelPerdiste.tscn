@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Fuente/PoiretOne-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/Button.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/Label2.gd" type="Script" id=3]
-
-
+[ext_resource path="res://Sound&FX/Game Over.ogg" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -14,7 +13,7 @@ use_filter = false
 font_data = ExtResource( 1 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 
 size = 70
 use_mipmaps = false
@@ -22,7 +21,7 @@ use_filter = false
 font_data = ExtResource( 1 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 
 size = 90
 use_mipmaps = false
@@ -100,12 +99,21 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 script = ExtResource( 3 )
 _sections_unfolded = [ "custom_fonts" ]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Label2" index="0"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
 
 [node name="Label" type="Label" parent="." index="3"]
 
@@ -123,7 +131,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "PERDISTE"
 percent_visible = 1.0
 lines_skipped = 0

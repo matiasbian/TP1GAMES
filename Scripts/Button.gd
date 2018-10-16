@@ -1,9 +1,11 @@
 extends Button
 
 export var panelPerdi = false
-func _ready():
 
+func _ready():
 	pass
+
+
 
 func _pressed():
 	get_tree().change_scene("res://Escena/nivel1.tscn")
