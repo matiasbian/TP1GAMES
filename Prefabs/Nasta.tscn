@@ -1,16 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/jetpack.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/GASOIL.png" type="Texture" id=2]
+[ext_resource path="res://Sprites Pixel Art/GASOIL.png" type="Texture" id=2]
+[ext_resource path="res://Sound&FX/explosion.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 16.8713, 20.6461 )
 
-[node name="Node2D" type="StaticBody2D" index="0"]
+[node name="Node2D" type="StaticBody2D"]
 
-scale = Vector2( 1.7879, 1.7879 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -24,13 +24,26 @@ Impulso = 200
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-scale = Vector2( 0.0763806, 0.0763806 )
+scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
+position = Vector2( 6.21572, 1.80456 )
 shape = SubResource( 1 )
 one_way_collision = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="." index="2"]
+
+stream = ExtResource( 3 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 

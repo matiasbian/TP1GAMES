@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/salto.ogg-0a50cbd157cd163376b256de683a2551.oggstr"
+
+[deps]
+
+source_file="res://Sound&FX/salto.ogg"
+dest_files=[ "res://.import/salto.ogg-0a50cbd157cd163376b256de683a2551.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

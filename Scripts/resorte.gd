@@ -20,14 +20,19 @@ var gameManager
 var sprite
 var fuego1
 var fuego2
+var collider
+var animation
 #timeout is what says in docs, in signals
 #self is who respond to the callback
 #_on_timer_timeout is the callback, can have any name
 
 func _ready():
+	if meRompo:
+		animation = get_node("AnimationPlayer")
 	sprite = get_node("AnimatedSprite")
 	fuego1 = get_node("AnimatedSprite2")
 	fuego2 = get_node("AnimatedSprite3")
+	collider = get_node("CollisionShape2D")
 	self.set_meta("type","Plataforma")
 	gameManager = get_parent()
 	timer = Timer.new()
@@ -52,18 +57,21 @@ func posibilidadDePlataforma():
 	if  int(rand_range(1,15)) == 5 && puedoTenerPowerUp:
 		scene_instance.set_name("PowerUp")
 		add_child(scene_instance)
-		scene_instance.translate(Vector2(position.x,position.y-50))
+		scene_instance.translate(Vector2(position.x,position.y-40))
 func _on_timer_timeout():
 	suma = suma * -1
 		
 func colision(personaje):
 	if meRompo:
-		queue_free()
+		collider.disabled = true
+		animation.play("desaparecer")
 	if not meRompo:
 		sprite.frame= 1
 		sprite.playing = true
 		fuego1.visible = false
 		fuego2.visible = false
+	get_node("Audio").play()
+	
 	gameManager.Plataformas() 
 	return salto + saltoExtra
 

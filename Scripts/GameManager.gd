@@ -48,6 +48,7 @@ func ponerPrimeraPlataforma(): #  en el ready poner siempre esto
 	scene_instance.set_name("Plataforma")
 	add_child(scene_instance)
 	scene_instance.translate(Vector2(personaje.position.x,personaje.position.y + 100))	
+	scene_instance.get_node("Audio").volume_db = -20
 
 #func _on_timer_timeout():
 #	Plataformas()

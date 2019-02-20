@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Fuente/PoiretOne-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Sprites/FFFFORWA.TTF" type="DynamicFontData" id=1]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -10,7 +10,7 @@ use_filter = false
 font_data = ExtResource( 1 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="CanvasLayer" type="CanvasLayer" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )

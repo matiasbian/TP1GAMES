@@ -1,26 +1,27 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/resorte.gd" type="Script" id=1]
 [ext_resource path="res://Prefabs/Nasta.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Sprites/Gato Durmiendo_1_Texto.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/Gato Enojado_Texto.png" type="Texture" id=4]
-[ext_resource path="res://Prefabs/Fuego.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Prefabs/Fuego.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites Pixel Art/Gato_Durmiendo_1_Texto.png" type="Texture" id=4]
+[ext_resource path="res://Sprites Pixel Art/Gato Enojado_Texto.png" type="Texture" id=5]
+[ext_resource path="res://Sound&FX/salto.wav" type="AudioStream" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 51.7801, 36.0679 )
+extents = Vector2( 46.3461, 26.1402 )
 
 [sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 4 ) ],
 "loop": false,
 "name": "Gato",
 "speed": 3.0
 } ]
 
-[node name="Plataforma" type="StaticBody2D" index="0"]
+[node name="Plataforma" type="StaticBody2D"]
 
 scale = Vector2( 1.04629, 1.04629 )
 input_pickable = false
@@ -46,22 +47,35 @@ distanciaDeBorrado = 600
 shape = SubResource( 1 )
 one_way_collision = true
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
+[node name="AnimatedSprite2" parent="." index="1" instance=ExtResource( 3 )]
+
+position = Vector2( -53.3869, 33.9823 )
+frame = 1
+flip_h = true
+
+[node name="AnimatedSprite3" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 53.1411, 32.5869 )
+frame = 1
+flip_h = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="3"]
 
 position = Vector2( -0.405518, -19.2365 )
-scale = Vector2( 0.0676343, 0.0676343 )
+scale = Vector2( 0.22, 0.22 )
 frames = SubResource( 2 )
 animation = "Gato"
-_sections_unfolded = [ "Visibility" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="AnimatedSprite2" parent="." index="2" instance=ExtResource( 5 )]
+[node name="Audio" type="AudioStreamPlayer2D" parent="." index="4"]
 
-position = Vector2( -60.3637, 68.0289 )
-frame = 12
-
-[node name="AnimatedSprite3" parent="." index="3" instance=ExtResource( 5 )]
-
-position = Vector2( 62.3504, 58.0678 )
-frame = 11
+stream = ExtResource( 6 )
+volume_db = -5.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 

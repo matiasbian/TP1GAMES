@@ -8,7 +8,7 @@ func _ready():
 	
 
 func _process(delta):
-		acomodarmeAlPersonaje(22)
+		acomodarmeAlPersonaje(14)
 
 func acomodarmeAlPersonaje(muv):
 	if padre.sprite.flip_h == true:

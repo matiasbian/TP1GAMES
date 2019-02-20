@@ -12,11 +12,15 @@ var sprite
 var fuego1
 var unSalto = false
 
+
 func _ready():
+	
 	fuego1 = get_node("Fuego1")
 	padre = get_parent()
 	sprite = get_node("Sprite")
+	setSkin()
 	self.set_meta("type","Personaje")
+	
 	
 
 func _process(delta):
@@ -36,10 +40,15 @@ func caerYSaltar(deltis):
 		salto = collision.collider.colision(self)
 		collision = null
 	if collision != null and collision.collider.get_meta("type") == "PowerUp":
+		get_node("Audio").play()
 		collision.collider.colision(self)
 		tiempoDeCaida = 0 #esto es por si es un power up que te  hace saltar 
 	
-
+func setSkin():
+	var dir = load ("res://Sprites Pixel Art/Hamster" + str( Puntaje.skinNro) + ".png")
+	print("res://Sprites Pixel Art/Hamster" + str( Puntaje.skinNro) + ".png")
+	sprite.texture = dir
+	
 func aumentarDificultad(delta):
 	gravedad += 0.09 * delta
 	velMov += 0.05 * delta
@@ -52,11 +61,14 @@ func MovIzq():
 	if Input.is_action_pressed("ui_left"):
 		position.x -= velMov
 		sprite.flip_h = true
+		fuego1.flip_h = false
+		
 		
 func MovDer():
 	if Input.is_action_pressed("ui_right"):
 		position.x += velMov
 		sprite.flip_h = false
+		fuego1.flip_h = true
 		
 
 func Acomodarse():

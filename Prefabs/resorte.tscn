@@ -1,19 +1,20 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/resorte.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Gato Durmiendo_2.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/Gato Enojado_Texto.png" type="Texture" id=3]
-[ext_resource path="res://Prefabs/Fuego.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Prefabs/Fuego.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites Pixel Art/Gato_Durmiendo_2_Texto.png" type="Texture" id=3]
+[ext_resource path="res://Sprites Pixel Art/Gato Enojado_Texto.png" type="Texture" id=4]
+[ext_resource path="res://Sound&FX/salto2.wav" type="AudioStream" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 60.5003, 38.4125 )
+extents = Vector2( 47.5317, 33.3816 )
 
 [sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "Resorte",
 "speed": 0.1
@@ -44,21 +45,34 @@ position = Vector2( 0.540375, 15.6704 )
 shape = SubResource( 1 )
 one_way_collision = true
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
+[node name="AnimatedSprite2" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( -6.32335, -4.58292 )
-scale = Vector2( 0.0716719, 0.0716719 )
+position = Vector2( 54.122, 54.5287 )
+frame = 1
+flip_h = true
+
+[node name="AnimatedSprite3" parent="." index="2" instance=ExtResource( 2 )]
+
+position = Vector2( -53.7788, 54.2125 )
+frame = 1
+flip_h = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="3"]
+
+scale = Vector2( 0.22, 0.22 )
 frames = SubResource( 2 )
 animation = "Resorte"
+_sections_unfolded = [ "Transform" ]
 
-[node name="AnimatedSprite2" parent="." index="2" instance=ExtResource( 4 )]
+[node name="Audio" type="AudioStreamPlayer2D" parent="." index="4"]
 
-position = Vector2( 60.9904, 77.2804 )
-frame = 11
-
-[node name="AnimatedSprite3" parent="." index="3" instance=ExtResource( 4 )]
-
-position = Vector2( -69.2328, 85.979 )
-frame = 10
+stream = ExtResource( 5 )
+volume_db = -4.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 

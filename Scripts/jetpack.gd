@@ -9,7 +9,9 @@ func _ready():
 	pass
 
 func colision(personaje):
+	
 	gameManager.cantidadDePlataformas(3)
 	personaje.salto += Impulso
+	
 	self.queue_free()
 	

@@ -9,10 +9,10 @@
 [ext_resource path="res://Prefabs/puntaje.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Prefabs/Personaje.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=9]
-[ext_resource path="res://Sound&FX/Music.ogg" type="AudioStream" id=10]
-[ext_resource path="res://Sprites/unnamed.png" type="Texture" id=11]
+[ext_resource path="res://Sound&FX/tema.wav" type="AudioStream" id=10]
+[ext_resource path="res://Sprites Pixel Art/unnamed.png" type="Texture" id=11]
 
-[node name="GameManager" type="Node2D" index="0"]
+[node name="GameManager" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
@@ -64,7 +64,7 @@ _sections_unfolded = [ "Limit", "Material", "Offset" ]
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="3"]
 
 stream = ExtResource( 10 )
-volume_db = 0.0
+volume_db = -5.0
 pitch_scale = 1.0
 autoplay = true
 mix_target = 0
@@ -88,13 +88,14 @@ scroll_ignore_camera_zoom = false
 
 motion_scale = Vector2( 1, 1 )
 motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 1080, 4816 )
-_sections_unfolded = [ "Motion" ]
+motion_mirroring = Vector2( 1, 1390 )
+_sections_unfolded = [ "Motion", "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
 
+scale = Vector2( 0.29, 0.29 )
 texture = ExtResource( 11 )
 centered = false
-_sections_unfolded = [ "Offset" ]
+_sections_unfolded = [ "Offset", "Transform" ]
 
 
