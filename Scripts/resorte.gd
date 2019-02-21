@@ -65,6 +65,7 @@ func colision(personaje):
 	if meRompo:
 		collider.disabled = true
 		animation.play("desaparecer")
+		get_node("Audio2").play()
 	if not meRompo:
 		sprite.frame= 1
 		sprite.playing = true

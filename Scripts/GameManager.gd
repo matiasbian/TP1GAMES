@@ -16,7 +16,7 @@ func _ready():
 	
 
 	rango2X = get_viewport().size.x - 50
-	text = get_node("CanvasLayer/Label")
+	text = get_node("CanvasLayer/VBoxContainer/MarginContainer/Label")
 	personaje = get_node("Personaje")
 	ponerPrimeraPlataforma()
 	yDePlataformas = personaje.position.y
@@ -40,7 +40,8 @@ func MostrarMenuMeMori():
 func Puntaje():
 	if personaje.tiempoDeCaida == 0:
 		Puntaje.puntaje = personaje.position.y/50
-		text.text = str(-(int(Puntaje.puntaje)))
+		if (Puntaje.puntaje < 0):
+			text.text = str(-(int(Puntaje.puntaje)))
 
 func ponerPrimeraPlataforma(): #  en el ready poner siempre esto
 	var scene_instance = list[1]
