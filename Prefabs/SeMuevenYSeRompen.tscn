@@ -39,4 +39,8 @@ playback_speed = 1.0
 anims/desaparecer = SubResource( 1 )
 blend_times = [  ]
 
+[node name="Audio" parent="." index="5"]
+
+volume_db = -7.0
+
 

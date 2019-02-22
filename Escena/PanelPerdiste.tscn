@@ -4,7 +4,7 @@
 [ext_resource path="res://Scripts/Button.gd" type="Script" id=2]
 [ext_resource path="res://Sound&FX/buttonclick.wav" type="AudioStream" id=3]
 [ext_resource path="res://Scripts/Label2.gd" type="Script" id=4]
-[ext_resource path="res://Sound&FX/Game Over.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Sound&FX/gameover.wav" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -30,7 +30,7 @@ use_filter = false
 font_data = ExtResource( 1 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Resource", "Settings" ]
 
-[node name="Panel" type="CanvasLayer"]
+[node name="Panel" type="CanvasLayer" index="0"]
 
 pause_mode = 2
 layer = 1
@@ -61,10 +61,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 260.0
-margin_top = 600.0
-margin_right = 494.0
-margin_bottom = 675.0
+margin_left = 130.0
+margin_top = 403.0
+margin_right = 364.0
+margin_bottom = 478.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -121,7 +121,7 @@ _sections_unfolded = [ "custom_fonts" ]
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Label2" index="0"]
 
 stream = ExtResource( 5 )
-volume_db = 0.0
+volume_db = -9.0
 pitch_scale = 1.0
 autoplay = true
 mix_target = 0
@@ -133,10 +133,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 240.0
-margin_top = 250.0
-margin_right = 525.0
-margin_bottom = 427.0
+margin_left = 112.0
+margin_top = 166.0
+margin_right = 397.0
+margin_bottom = 343.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2

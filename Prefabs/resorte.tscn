@@ -48,13 +48,11 @@ one_way_collision = true
 [node name="AnimatedSprite2" parent="." index="1" instance=ExtResource( 2 )]
 
 position = Vector2( 54.122, 54.5287 )
-frame = 1
 flip_h = true
 
 [node name="AnimatedSprite3" parent="." index="2" instance=ExtResource( 2 )]
 
 position = Vector2( -53.7788, 54.2125 )
-frame = 1
 flip_h = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="3"]
