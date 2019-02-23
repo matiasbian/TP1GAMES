@@ -84,9 +84,9 @@ func borrameSiNoEstoyVisible():
 		
 func mover():
 	self.position.x += suma
-	if self.position.x < 50:
+	if self.position.x < -50:
 		_on_timer_timeout()
-	if self.position.x > get_viewport().size.x - 50:
+	if self.position.x > get_viewport().size.x + 50:
 		_on_timer_timeout()
 	
 	

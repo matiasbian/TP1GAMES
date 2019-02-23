@@ -72,10 +72,10 @@ func MovDer():
 		
 
 func Acomodarse():
-	if position.x < 0: # arreglar resolucion
-	   position.x = get_viewport().size.x
-	if position.x > get_viewport().size.x:
-		position.x= 0
+	if position.x < 10: # arreglar resolucion
+	   position.x = get_viewport().size.x + 150
+	if position.x > get_viewport().size.x + 150:
+		position.x= 10
 
 func contarTiempoDeCaida(delta):
 	if gravedad - salto > 0:

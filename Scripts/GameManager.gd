@@ -15,7 +15,7 @@ var audioGameOver
 func _ready():
 	
 
-	rango2X = get_viewport().size.x - 50
+	rango2X = get_viewport().size.x +50
 	text = get_node("CanvasLayer/VBoxContainer/MarginContainer/Label")
 	personaje = get_node("Personaje")
 	ponerPrimeraPlataforma()
@@ -63,7 +63,7 @@ func Plataformas(facilidadInicial = 0): #Esta medio fiero	, podria estar mejor
 		scene_instance = scene_instance.instance()
 		scene_instance.set_name("Plataforma")
 		add_child(scene_instance)
-		scene_instance.translate(Vector2 (DameAleatorio( rango1X + 50,rango2X),DameAleatorio(yDePlataformas ,yDePlataformas -10)))
+		scene_instance.translate(Vector2 (DameAleatorio( rango1X + 200,rango2X),DameAleatorio(yDePlataformas ,yDePlataformas -10)))
 		yDePlataformas -= distancia - facilidadInicial
 
 
