@@ -16,6 +16,7 @@ func _ready():
 		self.text = str(Puntaje.coinsTempop)
 	else:
 		self.text = "Score " + String(-int((Puntaje.puntaje)))
+	Puntaje.maxScorep()
 
 
 func pararCancion():

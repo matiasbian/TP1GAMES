@@ -9,11 +9,13 @@ func _ready():
 	# Initialization here
 	pass
 
-func saveCoins(score, tcoins):
+func saveCoins(score, tcoins,skins,skinActual):
 	print(Puntaje.coins)
 	var data = {
     	highScore = score,
-    	coins = tcoins
+    	coins = tcoins,
+		skinList = skins,
+		skA = skinActual
 	}
 
 	var file = File.new()

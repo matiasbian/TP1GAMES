@@ -45,8 +45,8 @@ func saveScore():
 	Puntaje.coins += Puntaje.coinsTemp
 	Puntaje.coinsTempop = Puntaje.coinsTemp
 	Puntaje.coinsTemp = 0
-	Puntaje.maxScorep(Puntaje.puntaje)
-	Save.saveCoins(Puntaje.maxScore,Puntaje.coins)
+	#Puntaje.maxScorep()
+	Save.saveCoins(Puntaje.maxScore,Puntaje.coins,Puntaje.yaComprados,Puntaje.skinNro)
 	
 func Puntaje():
 	zanas.text = str(Puntaje.coinsTemp)

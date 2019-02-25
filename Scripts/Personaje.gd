@@ -45,7 +45,7 @@ func caerYSaltar(deltis):
 		tiempoDeCaida = 0 #esto es por si es un power up que te  hace saltar 
 	
 func setSkin():
-	var dir = load ("res://Sprites Pixel Art/Hamster" + str( Puntaje.skinNro) + ".png")
+	var dir = load ("res://Sprites Pixel Art/Skins/Hamster" + str( Puntaje.skinNro) + ".png")
 	print("res://Sprites Pixel Art/Hamster" + str( Puntaje.skinNro) + ".png")
 	sprite.texture = dir
 	

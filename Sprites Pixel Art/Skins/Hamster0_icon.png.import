@@ -1,0 +1,29 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Hamster0_icon.png-c5f470052e7cf1ed8f821f90849eae2a.stex"
+
+[deps]
+
+source_file="res://Sprites Pixel Art/Skins/Hamster0_icon.png"
+dest_files=[ "res://.import/Hamster0_icon.png-c5f470052e7cf1ed8f821f90849eae2a.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
