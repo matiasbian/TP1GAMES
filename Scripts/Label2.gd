@@ -3,6 +3,7 @@ extends Label
 var gameManager
 var audio
 var timer
+export var esZana = false
 func _ready():
 	audio = get_node("AudioStreamPlayer")
 	timer = Timer.new()
@@ -11,7 +12,10 @@ func _ready():
 	timer.connect("timeout",self,"pararCancion")
 	timer.start()
 	gameManager = get_parent().get_parent()
-	self.text = "Puntaje " + String(-int((Puntaje.puntaje)))
+	if (esZana):
+		self.text = str(Puntaje.coinsTempop)
+	else:
+		self.text = "Score " + String(-int((Puntaje.puntaje)))
 
 
 func pararCancion():

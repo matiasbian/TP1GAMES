@@ -6,6 +6,7 @@ export var cantidadMax = 0
 var personaje
 var puntaje
 var text
+var zanas
 export var distancia= 0
 var yDePlataformas = 0
 var scene = load("res://Escena/PanelPerdiste.tscn") 
@@ -17,6 +18,7 @@ func _ready():
 
 	rango2X = get_viewport().size.x +50
 	text = get_node("CanvasLayer/VBoxContainer/MarginContainer/Label")
+	zanas = get_node("CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer/Label2")
 	personaje = get_node("Personaje")
 	ponerPrimeraPlataforma()
 	yDePlataformas = personaje.position.y
@@ -34,10 +36,20 @@ func cantidadDePlataformas(cant):
 		Plataformas(100)
 
 func MostrarMenuMeMori():
-		get_tree().change_scene("res://Escena/PanelPerdiste.tscn")
+	saveScore()
+	
+	get_tree().change_scene("res://Escena/PanelPerdiste.tscn")
 		
 
+func saveScore():
+	Puntaje.coins += Puntaje.coinsTemp
+	Puntaje.coinsTempop = Puntaje.coinsTemp
+	Puntaje.coinsTemp = 0
+	Puntaje.maxScorep(Puntaje.puntaje)
+	Save.saveCoins(Puntaje.maxScore,Puntaje.coins)
+	
 func Puntaje():
+	zanas.text = str(Puntaje.coinsTemp)
 	if personaje.tiempoDeCaida == 0:
 		Puntaje.puntaje = personaje.position.y/50
 		if (Puntaje.puntaje < 0):

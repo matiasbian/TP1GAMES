@@ -40,6 +40,10 @@ blend_times = [  ]
 
 [node name="Audio" parent="." index="5"]
 
-volume_db = -6.0
+volume_db = -7.0
+
+[node name="Audio2" parent="." index="6"]
+
+volume_db = -5.0
 
 

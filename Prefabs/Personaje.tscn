@@ -5,7 +5,7 @@
 [ext_resource path="res://Prefabs/Fuego.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/Fuego.gd" type="Script" id=4]
 [ext_resource path="res://Sound&FX/explosion.wav" type="AudioStream" id=5]
-[ext_resource path="res://Sound&FX/desvanecer.wav" type="AudioStream" id=6]
+[ext_resource path="res://Sound&FX/zanaSound.wav" type="AudioStream" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -13,7 +13,7 @@ custom_solver_bias = 0.0
 radius = 30.0
 height = 36.2349
 
-[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
+[node name="KinematicBody2D" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -40,7 +40,6 @@ shape = SubResource( 1 )
 position = Vector2( -14, 58.706 )
 scale = Vector2( 0.3, 0.3 )
 z_index = -1
-frame = 1
 flip_h = true
 script = ExtResource( 4 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
@@ -59,7 +58,7 @@ area_mask = 1
 [node name="AudioZana" type="AudioStreamPlayer2D" parent="." index="4"]
 
 stream = ExtResource( 6 )
-volume_db = 0.0
+volume_db = 1.0
 pitch_scale = 1.0
 autoplay = false
 max_distance = 2000.0

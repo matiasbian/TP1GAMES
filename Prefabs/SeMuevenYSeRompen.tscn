@@ -29,6 +29,14 @@ soyMovible = true
 meRompo = true
 puedoTenerPowerUp = false
 
+[node name="AnimatedSprite2" parent="." index="1"]
+
+frame = 0
+
+[node name="AnimatedSprite3" parent="." index="2"]
+
+frame = 0
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
 
 root_node = NodePath("..")
@@ -42,5 +50,9 @@ blend_times = [  ]
 [node name="Audio" parent="." index="5"]
 
 volume_db = -7.0
+
+[node name="Audio2" parent="." index="6"]
+
+volume_db = -5.0
 
 

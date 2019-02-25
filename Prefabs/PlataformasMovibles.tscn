@@ -7,4 +7,20 @@
 _sections_unfolded = [ "Pause", "Transform", "Visibility" ]
 soyMovible = true
 
+[node name="AnimatedSprite2" parent="." index="1"]
+
+frame = 0
+
+[node name="AnimatedSprite3" parent="." index="2"]
+
+frame = 0
+
+[node name="Audio" parent="." index="4"]
+
+volume_db = -6.0
+
+[node name="Audio2" parent="." index="5"]
+
+volume_db = -5.0
+
 

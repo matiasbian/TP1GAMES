@@ -30,7 +30,6 @@ _sections_unfolded = [ "Visibility" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
 position = Vector2( -0.852566, 36.6609 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
 [node name="Audio" type="AudioStreamPlayer2D" parent="." index="2"]
