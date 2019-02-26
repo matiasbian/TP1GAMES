@@ -29,7 +29,7 @@ func descuentoSiTengo():
 		comprarSiSePuede()
 		
 func yaLoCompre():
-	return Puntaje.yaComprados.has(itemList)
+	return Puntaje.myHas(itemList,Puntaje.yaComprados)
 	
 func comprarSiSePuede():
 	if (Puntaje.coins >= price):
@@ -37,7 +37,7 @@ func comprarSiSePuede():
 		Puntaje.skinNro = itemList
 		get_parent().get_parent().get_node("MarginContainer/HBoxContainer/Label2").text = str(Puntaje.coins)
 		print ("dinero restante: " + str(Puntaje.coins))
-		if (not Puntaje.yaComprados.has(itemList)):
+		if (not Puntaje.myHas(itemList,Puntaje.yaComprados)):
 			Puntaje.yaComprados.append(itemList)
 			Save.saveCoins(Puntaje.puntaje,Puntaje.coins,Puntaje.yaComprados,Puntaje.skinNro)
 			

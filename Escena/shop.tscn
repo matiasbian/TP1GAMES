@@ -9,8 +9,7 @@
 [ext_resource path="res://Sound&FX/buttonclick.ogg" type="AudioStream" id=7]
 [ext_resource path="res://Sprites Pixel Art/Skins/Hamster1_icon.png" type="Texture" id=8]
 [ext_resource path="res://Sprites Pixel Art/Skins/Hamster2_icon.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/boton.png" type="Texture" id=10]
-[ext_resource path="res://Scripts/Back.gd" type="Script" id=11]
+[ext_resource path="res://Scripts/Back.gd" type="Script" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -20,7 +19,15 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="Panel" type="CanvasLayer" index="0"]
+[sub_resource type="DynamicFont" id=2]
+
+size = 20
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="Panel" type="CanvasLayer"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -613,7 +620,7 @@ attenuation = 1.0
 bus = "Master"
 area_mask = 1
 
-[node name="TextureButton" type="TextureButton" parent="CenterContainer/VBoxContainer" index="4"]
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer" index="4"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -631,16 +638,18 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = SubResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 10 )
-expand = true
-script = ExtResource( 11 )
-_sections_unfolded = [ "Rect", "Textures" ]
+text = "BACK"
+flat = false
+align = 1
+script = ExtResource( 10 )
+_sections_unfolded = [ "Rect", "Textures", "custom_fonts" ]
 
-[node name="Audio" type="AudioStreamPlayer2D" parent="CenterContainer/VBoxContainer/TextureButton" index="0"]
+[node name="Audio" type="AudioStreamPlayer2D" parent="CenterContainer/VBoxContainer/Button" index="0"]
 
 stream = ExtResource( 7 )
 volume_db = 0.0

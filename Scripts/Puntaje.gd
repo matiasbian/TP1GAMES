@@ -16,6 +16,9 @@ func _ready():
 	maxScore = data.highScore
 	yaComprados = data.skinList
 	skinNro = data.skA
+	
+
+	
 
 func descontarCoins(cant):
 	coins -= cant
@@ -26,3 +29,9 @@ func maxScorep():
 	if (-puntaje > maxScore):
 		maxScore = int (-puntaje)
 	print ("PUNTAJE: " + str(puntaje ) + "SCORE MAX: " + str(maxScore)) 
+
+func myHas(value,lista):
+	for e in lista:
+		if (e == value):
+			return true
+	return false

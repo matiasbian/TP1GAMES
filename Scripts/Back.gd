@@ -1,4 +1,4 @@
-extends TextureButton
+extends Button
 
 # class member variables go here, for example:
 # var a = 2
