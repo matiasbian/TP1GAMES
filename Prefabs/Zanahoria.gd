@@ -5,6 +5,7 @@ extends Area2D
 # var b = "textvar"
 
 func _ready():
+	get_node("AnimationPlayer").play("Idle")
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	pass
@@ -25,4 +26,10 @@ func _on_Zanahoria_body_entered(body):
 	if (vari != null):
 		vari.play()
 		Puntaje.coinsTemp += 1
+		reproduzcoAnim(body)
 	get_parent().remove_child(self)
+
+func reproduzcoAnim(body):
+	var ui = body.get_parent().get_node("CanvasLayer")
+	if (ui != null):
+		ui.get_node("AnimationPlayer").play("+1")
