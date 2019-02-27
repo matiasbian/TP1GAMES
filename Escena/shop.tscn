@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Escena/Fondo.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/FFFFORWA.TTF" type="DynamicFontData" id=2]
@@ -9,7 +9,10 @@
 [ext_resource path="res://Sound&FX/buttonclick.ogg" type="AudioStream" id=7]
 [ext_resource path="res://Sprites Pixel Art/Skins/Hamster1_icon.png" type="Texture" id=8]
 [ext_resource path="res://Sprites Pixel Art/Skins/Hamster2_icon.png" type="Texture" id=9]
-[ext_resource path="res://Scripts/Back.gd" type="Script" id=10]
+[ext_resource path="res://Sprites Pixel Art/Buttons/Back_High.png" type="Texture" id=10]
+[ext_resource path="res://Sprites Pixel Art/Buttons/Back_Pressed.png" type="Texture" id=11]
+[ext_resource path="res://Sprites Pixel Art/Buttons/Back_Normal.png" type="Texture" id=12]
+[ext_resource path="res://Scripts/Back.gd" type="Script" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -18,14 +21,6 @@ use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=2]
-
-size = 20
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 2 )
-_sections_unfolded = [ "Font", "Settings" ]
 
 [node name="Panel" type="CanvasLayer"]
 
@@ -620,7 +615,7 @@ attenuation = 1.0
 bus = "Master"
 area_mask = 1
 
-[node name="Button" type="Button" parent="CenterContainer/VBoxContainer" index="4"]
+[node name="Button" type="TextureButton" parent="CenterContainer/VBoxContainer" index="4"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -638,15 +633,17 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "BACK"
-flat = false
-align = 1
-script = ExtResource( 10 )
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 11 )
+texture_hover = ExtResource( 12 )
+texture_focused = ExtResource( 10 )
+expand = true
+stretch_mode = 5
+script = ExtResource( 13 )
 _sections_unfolded = [ "Rect", "Textures", "custom_fonts" ]
 
 [node name="Audio" type="AudioStreamPlayer2D" parent="CenterContainer/VBoxContainer/Button" index="0"]

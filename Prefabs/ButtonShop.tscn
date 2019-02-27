@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites Pixel Art/Skins/Hamster0_icon.png" type="Texture" id=1]
+[ext_resource path="res://Escena/ButtonShop.gd" type="Script" id=2]
+[ext_resource path="res://Sound&FX/buttonclick.ogg" type="AudioStream" id=3]
+
+[node name="Button" type="Button"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 120.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 120, 100 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Normal"
+icon = ExtResource( 1 )
+flat = false
+align = 1
+script = ExtResource( 2 )
+_sections_unfolded = [ "Rect" ]
+itemList = 0
+price = 0
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="." index="0"]
+
+stream = ExtResource( 3 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+
