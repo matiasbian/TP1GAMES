@@ -13,7 +13,7 @@ radius = 118.391
 
 resource_name = "Idle"
 length = 2.0
-loop = false
+loop = true
 step = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:flip_h")
@@ -28,7 +28,7 @@ tracks/0/keys = {
 "values": [ false, true, false, true ]
 }
 
-[node name="Zanahoria" type="Area2D" index="0"]
+[node name="Zanahoria" type="Area2D"]
 
 scale = Vector2( 0.135, 0.135 )
 input_pickable = true
@@ -44,7 +44,6 @@ _sections_unfolded = [ "Transform" ]
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
 texture = ExtResource( 2 )
-flip_h = true
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
